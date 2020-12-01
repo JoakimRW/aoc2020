@@ -15,18 +15,11 @@ public class MainClass {
 		List<Long> b = new ArrayList<>(l);
 		l.forEach(a -> {
 			b.remove(a);
-			Stream<Long> f = b.stream().filter(c -> (a+c == 2020L));
+			Stream<Long> f = b.stream().filter(c -> (a + c == 2020L));
 			Optional<Long> findFirst = f.findFirst();
 			if (findFirst.isPresent()) {
-				System.out.println("a " + a);
-				System.out.println("c " + findFirst);
-				
-				System.out.println(a*findFirst.get());
+				System.out.println(a * findFirst.get());
 			}
-			
-			
-		} );
-		
+		});
 	}
-
 }

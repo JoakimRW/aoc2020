@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class MainClass {
-	
+
 	public static void main(String[] args) {
 		List<Long> l = Arrays.asList(args).stream().map(Long::parseLong).collect(Collectors.toList());
 		System.out.println(l);
