@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class MainClass {
 
@@ -13,8 +12,7 @@ public class MainClass {
 		System.out.println(l);
 
 		l.forEach(a -> l.forEach(b -> {
-			Stream<Long> f = l.stream().filter(c -> (a + b + c == 2020L));
-			Optional<Long> findFirst = f.findFirst();
+			Optional<Long> findFirst = l.stream().filter(c -> (a + b + c == 2020L)).findFirst();
 			if (findFirst.isPresent()) {
 				System.out.println(a * b * findFirst.get());
 			}
