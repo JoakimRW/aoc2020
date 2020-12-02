@@ -1,5 +1,9 @@
 package twoB;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class TwoB {
 
 	public static void main(String[] args) {
@@ -11,20 +15,14 @@ public class TwoB {
 			String character = args[i + 1];
 			String password = args[i + 2];
 
-			String[] split = positionsString.split("-");
-			Integer pos1 = Integer.valueOf(split[0]);
-			Integer pos2 = Integer.valueOf(split[1]);
+			List<Integer> split = Arrays.asList(positionsString.split("-")).stream()//
+					.map(Integer::valueOf)//
+					.collect(Collectors.toList());
 
-			char pos1Char = password.charAt(pos1 - 1);
-			char pos2Char = password.charAt(pos2 - 1);
-			char charAt = character.charAt(0);
-			int count = 0;
-			if (pos1Char == charAt) {
-				count++;
-			}
-			if (pos2Char == charAt) {
-				count++;
-			}
+			long count = split.stream()//
+					.map(n -> password.charAt(n - 1))//
+					.filter(c -> c == character.charAt(0))//
+					.count();
 
 			if (count == 1) {
 				correctCounter++;
