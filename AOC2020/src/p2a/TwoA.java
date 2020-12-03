@@ -1,4 +1,4 @@
-package twoA;
+package p2a;
 
 public class TwoA {
 

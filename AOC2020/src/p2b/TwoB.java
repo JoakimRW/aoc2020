@@ -1,4 +1,4 @@
-package twoB;
+package p2b;
 
 import java.util.Arrays;
 import java.util.List;
