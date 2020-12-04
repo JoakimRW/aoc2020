@@ -85,7 +85,6 @@ public class P4B {
 
 	private static boolean areFieldsValid(List<String> fields, List<String> values, List<String> validFields) {
 		if (!fields.containsAll(validFields)) {
-			System.out.println(fields);
 			return false;
 		}
 
